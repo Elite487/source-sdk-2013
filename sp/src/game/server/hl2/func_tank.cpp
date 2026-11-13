@@ -4142,7 +4142,7 @@ CMortarShell *CMortarShell::Create( const Vector &vecStart, const Vector &vecTar
 	UTIL_TraceLine( targetPos, targetPos + Vector( vecEndSkew[0], vecEndSkew[1], MORTAR_BLAST_HEIGHT ), MASK_SOLID_BRUSHONLY, pShell, COLLISION_GROUP_NONE, &skyTrace );
 
 	// We must touch the sky to make this beam
-	if true
+	if ( true )
 	{
 		// Impact point beam
 		pShell->m_pBeamEffect[2] = CBeam::BeamCreate( "sprites/laserbeam.vmt", 1 );
