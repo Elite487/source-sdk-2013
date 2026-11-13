@@ -4332,7 +4332,7 @@ void CMortarShell::FlyThink()
 	m_pBeamEffect[1]->SetWidth( 8.0f * curve1 );
 	m_pBeamEffect[1]->SetEndWidth( 8.0f * curve1 );
 
-	float curve2 = Bias( lifePerc, 0.1f );
+	float curve2 = MAX( 0.5f, Bias( lifePerc, 0.5f ) );
 
 	if ( m_pBeamEffect[2] )
 	{
