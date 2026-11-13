@@ -4089,7 +4089,7 @@ void CMortarShell::FixUpImpactPoint( const Vector &initialPos, const Vector &ini
 //---------------------------------------------------------
 //---------------------------------------------------------
 #define MORTAR_BLAST_DAMAGE	50
-#define	MORTAR_BLAST_HEIGHT	7500
+#define	MORTAR_BLAST_HEIGHT	32768
 
 #ifdef MAPBASE
 CMortarShell *CMortarShell::Create( const Vector &vecStart, const trace_t &tr, const Vector &vecShotDir, float flImpactDelay, float flWarnDelay, string_t warnSound )
@@ -4142,7 +4142,7 @@ CMortarShell *CMortarShell::Create( const Vector &vecStart, const Vector &vecTar
 	UTIL_TraceLine( targetPos, targetPos + Vector( vecEndSkew[0], vecEndSkew[1], MORTAR_BLAST_HEIGHT ), MASK_SOLID_BRUSHONLY, pShell, COLLISION_GROUP_NONE, &skyTrace );
 
 	// We must touch the sky to make this beam
-	if ( skyTrace.fraction <= 1.0f && skyTrace.surface.flags & SURF_SKY )
+	if true
 	{
 		// Impact point beam
 		pShell->m_pBeamEffect[2] = CBeam::BeamCreate( "sprites/laserbeam.vmt", 1 );
