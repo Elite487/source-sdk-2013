@@ -4724,11 +4724,11 @@ void CFuncTankMortar::Fire( int bulletCount, const Vector &barrelEnd, const Vect
 	Vector vecSpot = ( vecProjectedPosition + GetAbsOrigin() ) * 0.5;
 	vecSpot.z = GetAbsOrigin().z;
 	
-	// Trace up to find the fake 'apex' of the shell. The skybox or 1024 units, whichever comes first. 
+	// Trace up to find the fake 'apex' of the shell. The skybox or 32768 units, whichever comes first. 
 #ifdef MAPBASE
-	UTIL_TraceLine( vecSpot, vecSpot + Vector(0, 0, 1024), m_iMortarTraceMask, NULL, COLLISION_GROUP_NONE, &tr );
+	UTIL_TraceLine( vecSpot, vecSpot + Vector(0, 0, 32768), m_iMortarTraceMask, NULL, COLLISION_GROUP_NONE, &tr );
 #else
-	UTIL_TraceLine( vecSpot, vecSpot + Vector(0, 0, 1024), MASK_SOLID_BRUSHONLY, NULL, COLLISION_GROUP_NONE, &tr );
+	UTIL_TraceLine( vecSpot, vecSpot + Vector(0, 0, 32768), MASK_SOLID_BRUSHONLY, NULL, COLLISION_GROUP_NONE, &tr );
 #endif
 	vecSpot = tr.endpos;
 
